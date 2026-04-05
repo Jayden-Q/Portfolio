@@ -27,7 +27,7 @@ const Hero = () => {
 
     const spin = gsap.to(circularTextRef.current, {
       rotate: -360,
-      duration: 50,
+      duration: 100,
       repeat: -1,
       ease: "none",
       transformOrigin: "50% 50%",

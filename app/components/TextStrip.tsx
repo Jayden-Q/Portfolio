@@ -70,7 +70,7 @@ const TextStrip = ({ imgSrc, alt }: TextStripProps) => {
             width={500}
             height={500}
             alt={alt}
-            className="w-auto h-auto shrink-0 mr-10"
+            className="w-auto h-[25vw] lg:h-auto shrink-0 mr-10"
           />
         ))}
       </div>

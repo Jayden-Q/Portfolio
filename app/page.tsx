@@ -8,9 +8,16 @@ import About from "./components/About";
 import Services from "./components/Services";
 import TechStack from "./components/TechStack";
 
+const mainTagStyles = {
+  // style: "bg-red-200",
+  // responsive: "sm:bg-yellow-200 md:bg-green-200 lg:bg-orange-200 xl:bg-purple-200"
+  style: "white",
+  responsive: ""
+}
+
 const page = () => {
   return (
-    <main className="bg-red-200 sm:bg-yellow-200 md:bg-green-200 lg:bg-orange-200 xl:bg-purple-200">
+    <main className={`${mainTagStyles.style} ${mainTagStyles.responsive}`}>
       <SocialMedia />
 
       <Hero />

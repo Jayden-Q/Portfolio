@@ -27,8 +27,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Web Design Portfolio | Jayden Qin",
-  description: "Jayden Qin's web design portfolio",
+  title: "Jayden Qin - Web Design & Development",
+  description: "Freelance web designer located in Dublin. View my portfolio and get a custom website for your business.",
 };
 
 export default function RootLayout({

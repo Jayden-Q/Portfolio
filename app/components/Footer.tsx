@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import HoverFlipText from "./HoverFlipText";
 
+const styles = {};
+
 const links = [
   { text: "Home", href: "/", external: false },
   { text: "Portfolio", href: "#portfolio", external: false },
@@ -16,30 +18,29 @@ const links = [
 
 const Footer = () => {
   return (
-    <footer className="relative pt-40">
-      <ul className="flex justify-center gap-10 w-full">
+    <footer className="relative pt-40 md:pt-20 lg:pt-32 xl:pt-40">
+      <ul className="flex flex-col flex-wrap justify-center items-center gap-8 sm:gap-10 px-16 w-full sm:flex-row">
         {links.map((link, index) => (
           <li
-            className="flex items-center uppercase text-[24px] text-[#333] font-medium"
+            className="flex items-center uppercase text-[16px] sm:text-[16px] md:text-[18px] whitespace-nowrap font-medium"
             key={index}
           >
             {link.external ? (
-              <div className="flex gap-4">
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-2"
-                >
-                  <HoverFlipText as="p" text={link.text} className="" />
-                  <Image
-                    src="/link-icon.svg"
-                    width={20}
-                    height={20}
-                    alt="Link icon"
-                  />
-                </a>
-              </div>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-1 sm:gap-2"
+              >
+                <HoverFlipText as="p" text={link.text} className="" />
+                <Image
+                  src="/link-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Link icon"
+                  className="w-auto h-full"
+                />
+              </a>
             ) : (
               <a href={link.href}>
                 <HoverFlipText as="p" text={link.text} className="" />

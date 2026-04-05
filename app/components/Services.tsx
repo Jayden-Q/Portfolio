@@ -2,15 +2,19 @@ import Image from "next/image";
 
 import RevealText from "./RevealText";
 
-const styles = {
-  pricingCard: "flex flex-col border-2 border-[#333] rounded-2xl px-10 py-7 w-full max-w-[400px]",
-  cta: "w-full flex justify-center items-center gap-2.5 py-2 rounded-xl border-2 border-[#333] mt-2",
+import { sendGAEvent } from "@next/third-parties/google";
 
-  serviceTitle: "text-[18px] md:text-[20px] xl:text-[24px] leading-[115%] font-medium uppercase",
+const styles = {
+  pricingCard:
+    "flex flex-col border-2 border-[#333] rounded-2xl px-10 py-7 w-full max-w-[400px]",
+  cta: "w-full flex justify-center items-center gap-2.5 py-2 rounded-xl border-2 border-[#333] mt-2 transition-transform hover:scale-[1.05] duration-100",
+
+  serviceTitle:
+    "text-[18px] md:text-[20px] xl:text-[24px] leading-[115%] font-medium uppercase",
   price: "text-[28px] md:text-[36px] xl:text-[40px] font-bold tracking-tight",
   ctaText: "text-[16px] md:text-[20px] xl:text-[24px] font-semibold",
   benefit: "text-[16px] md:text-[18px] xl:text-[20px] font-medium",
-}
+};
 
 type PricingCardProps = {
   title: string;
@@ -22,7 +26,6 @@ const PricingCard = ({ title, price, benefits }: PricingCardProps) => {
   return (
     <div className={styles.pricingCard}>
       <div className="flex flex-col">
-
         {/* TITLE */}
         <RevealText
           as="h3"
@@ -56,6 +59,12 @@ const PricingCard = ({ title, price, benefits }: PricingCardProps) => {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.cta}
+          onClick={() =>
+            sendGAEvent("event", "service_clicked", {
+              event_category: "engagement",
+              event_label: title
+            })
+          }
         >
           <Image
             src="logos_google-meet.svg"

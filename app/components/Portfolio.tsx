@@ -8,6 +8,8 @@ import gsap from "gsap";
 import TextStrip from "./TextStrip";
 import RevealText from "./RevealText";
 
+import { sendGAEvent } from "@next/third-parties/google";
+
 gsap.registerPlugin(useGSAP);
 
 const work = [
@@ -55,6 +57,10 @@ const Portfolio = () => {
     setZoomed(false);
     setTransformOrigin("50% 50%");
     setActiveIndex((activeIndex - 1 + work.length) % work.length);
+
+    sendGAEvent("event", "project_prev_clicked", {
+      event_category: "engagement",
+    });
   }
 
   function showNext() {
@@ -62,6 +68,10 @@ const Portfolio = () => {
     setZoomed(false);
     setTransformOrigin("50% 50%");
     setActiveIndex((activeIndex + 1) % work.length);
+
+    sendGAEvent("event", "project_next_clicked", {
+      event_category: "engagement",
+    });
   }
 
   const handleKeyDown = useEffectEvent((e: KeyboardEvent) => {
@@ -134,6 +144,10 @@ const Portfolio = () => {
     setActiveIndex(index % work.length);
     setZoomed(false);
     setTransformOrigin("50% 50%");
+
+    sendGAEvent("event", "project_clicked", {
+      event_category: "engagement",
+    });
   };
 
   const handleZoom = (e: React.MouseEvent<HTMLDivElement>) => {

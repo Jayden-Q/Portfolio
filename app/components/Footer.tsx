@@ -1,6 +1,10 @@
+"use client"
+
 import Image from "next/image";
 
 import HoverFlipText from "./HoverFlipText";
+
+import { sendGAEvent } from "@next/third-parties/google";
 
 const styles = {};
 
@@ -31,6 +35,12 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex gap-1 sm:gap-2"
+                onClick={() =>
+                  sendGAEvent("event", "footer_social_media_clicked", {
+                    event_category: "engagement",
+                    event_label: link.text,
+                  })
+                }
               >
                 <HoverFlipText as="p" text={link.text} className="" />
                 <Image

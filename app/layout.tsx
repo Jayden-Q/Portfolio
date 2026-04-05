@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 
 import LenisProvider from "./providers/lenis-provider";
 
+import CookieConsent from "@/components/CookieConsent";
+
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
 
@@ -29,6 +31,15 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Jayden Qin - Web Design & Development",
   description: "Freelance web designer located in Dublin. View my portfolio and get a custom website for your business.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: "/apple-touch-icon.png"
+  },
+  manifest: "/site.webmanifest"
 };
 
 export default function RootLayout({
@@ -46,6 +57,8 @@ export default function RootLayout({
         <LenisProvider />
         {children}
         <Footer />
+
+        <CookieConsent />
       </body>
     </html>
   );

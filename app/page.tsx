@@ -1,6 +1,7 @@
 "use client";
 
 import SocialMedia from "./components/SocialMedia";
+import Navbar from "./components/Navbar";
 
 import Hero from "./components/Hero";
 import Portfolio from "./components/Portfolio";
@@ -20,6 +21,7 @@ const page = () => {
     <main className={`${mainTagStyles.style} ${mainTagStyles.responsive}`}>
       <SocialMedia />
 
+      <Navbar />
       <Hero />
       <Portfolio />
       <About />

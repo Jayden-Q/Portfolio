@@ -27,21 +27,26 @@ function setCookie(name: string, value: string, days = 365) {
 
   document.cookie = `${name}=${encodeURIComponent(
     value
-  )}; expires=${expires.toUTCString()}; path=/`;
+  )}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
 }
 
 export default function CookieConsent() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [cookieState, setCookieState] = useState<CookieState>('not-answered');
 
   useEffect(() => {
     const state = getCookie('cookie-consent-state') as CookieState | null;
     if (state) setCookieState(state);
+
+    setIsLoaded(true);
   }, []);
 
   const handleConsent = (state: CookieState) => {
     setCookie('cookie-consent-state', state);
     setCookieState(state);
   };
+
+  if (!isLoaded) return null;
 
   if (cookieState === 'not-answered') {
     return (

@@ -38,7 +38,11 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png"
   },
-  manifest: "/site.webmanifest"
+  manifest: "/site.webmanifest",
+  metadataBase: new URL("https://jaydenqin.com"),
+  alternates: {
+    canonical: "/"
+  }
 };
 
 export default function RootLayout({

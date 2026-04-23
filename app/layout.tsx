@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   metadataBase: new URL("https://jaydenqin.com"),
   alternates: {
-    canonical: "/"
+    canonical: "https://jaydenqin.com/"
   }
 };
 

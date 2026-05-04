@@ -27,6 +27,8 @@ const PricingCard = ({ title, price, benefits }: PricingCardProps) => {
     <div className={styles.pricingCard}>
       <div className="flex flex-col">
         {/* TITLE */}
+        <h3 className="sr-only">{title}</h3>
+
         <RevealText
           as="h3"
           text={title}
@@ -37,10 +39,13 @@ const PricingCard = ({ title, price, benefits }: PricingCardProps) => {
         />
 
         {/* PRICE */}
+        <h3 className="sr-only">€{String(price)}</h3>
+
         <div className="flex items-center">
           <h3
             // className="text-[40px] font-bold tracking-tight"
             className={styles.price}
+            aria-hidden="true"
           >
             €
           </h3>
@@ -82,6 +87,7 @@ const PricingCard = ({ title, price, benefits }: PricingCardProps) => {
         {benefits.map((benefit, index) => (
           <li className="flex items-center gap-2" key={index}>
             <Image src="tick.svg" width={24} height={24} alt="tick" />
+            <p className="sr-only">{benefit}</p>
             <RevealText
               as="p"
               text={benefit}
@@ -103,6 +109,7 @@ const Services = () => {
       id="services"
     >
       <div className="relative container max-w-350 z-1">
+        <h2 className="sr-only">Services</h2>
         <RevealText
           as="h2"
           text="Services"

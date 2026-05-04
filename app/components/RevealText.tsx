@@ -31,6 +31,7 @@ const RevealText = ({
   stagger,
   delay,
   duration = 1,
+  ...props
 }: RevealTextProps) => {
   const textRef = useRef<HTMLElement | null>(null);
 
@@ -119,7 +120,7 @@ const RevealText = ({
   };
 
   return (
-    <Tag ref={textRef} className={className}>
+    <Tag ref={textRef} className={className} aria-hidden="true" {...props}>
       {text.split("\n").map((line, i) => (
         <span key={i} className={mode === "line" ? "block" : undefined}>
           {renderLine(line, i)}

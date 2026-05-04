@@ -24,7 +24,8 @@ const HoverFlipText = ({
         "group inline-flex flex-wrap leading-none cursor-pointer",
         className
       )}
-      aria-label={text}
+      aria-hidden="true"
+      // aria-label={text}
     >
       {chars.map((char, index) => {
         const displayChar = char === " " ? "\u00A0" : char;

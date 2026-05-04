@@ -117,6 +117,10 @@ const Hero = () => {
   return (
     <section className="customSection" id="hero">
       <div className="customContainer">
+        <h1 className="sr-only">
+          Jayden Qin
+        </h1>
+
         <div ref={jaydenRef}>
           <RevealText
             as="h1"

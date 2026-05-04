@@ -170,6 +170,13 @@ const Portfolio = () => {
     >
       <div className="relative container z-1 mb-[100px] max-w-350">
         <div className="mb-16 flex flex-col items-start justify-between gap-5 px-4 md:px-5 lg:px-20 xl:px-5 md:flex-row md:items-center md:gap-20">
+          <h2 className="sr-only">
+            Recent Work
+          </h2>
+          <p className="sr-only">
+            A selection of my recent work, with more projects to be added soon.
+          </p>
+          
           <RevealText
             as="h2"
             text="Recent Work"
@@ -179,7 +186,7 @@ const Portfolio = () => {
           />
           <RevealText
             as="p"
-            text="A selection of my recent projects. Each one crafted with a focus on minimal design, clean code, and smoother user experience"
+            text="A selection of my recent work, with more projects to be added soon."
             className="w-full text-[18px] leading-[140%] lg:text-[24px] xl:max-w-[31.25rem] xl:text-[28px]"
           />
         </div>

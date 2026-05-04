@@ -43,9 +43,12 @@ export default function About() {
       className="relative min-h-[90vh] flex items-start justify-center pt-40 md:py-40"
     >
       <div className="w-full max-w-[1400px] px-4 md:px-20">
+        <p className="sr-only">{text}</p>
+
         <p
           ref={textRef}
           className="mx-auto text-[clamp(2rem,7vw,5rem)] font-semibold leading-[1.1] tracking-[-0.03em]"
+          aria-hidden="true"
         >
           {text.split(" ").map((word, wordIndex) => (
             <span key={wordIndex} className="inline-block mr-[0.25em]">

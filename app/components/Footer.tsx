@@ -42,7 +42,8 @@ const Footer = () => {
                   })
                 }
               >
-                <HoverFlipText as="p" text={link.text} className="" />
+                <span className="sr-only">{link.text}</span>
+                <HoverFlipText as="span" text={link.text} className="" />
                 <Image
                   src="/link-icon.svg"
                   width={20}
@@ -53,7 +54,8 @@ const Footer = () => {
               </a>
             ) : (
               <a href={link.href}>
-                <HoverFlipText as="p" text={link.text} className="" />
+                <span className="sr-only">{link.text}</span>
+                <HoverFlipText as="span" text={link.text} className="" />
               </a>
             )}
           </li>

@@ -53,6 +53,9 @@ const Tool = ({ title, description, iconSrc }: ToolProps) => {
     <div className="flex items-center gap-7">
       <Image src={iconSrc} width={52} height={52} alt={`${title} icon`} className="w-[40px] h-[40px] md:w-[48px] md:h-[48px] xl:w-[52px] xl:h-[52px]" />
       <div className="flex flex-col">
+        <h3 className="sr-only">{title}</h3>
+        <p className="sr-only">{description}</p>
+
         <RevealText
           as="h3"
           text={title}
@@ -80,6 +83,7 @@ const TechStack = () => {
       <div
         className="flex-col gap-20 px-8 md:px-20 relative container max-w-350 flex md:justify-between items-start z-1 md:flex-row"
       >
+        <h2 className="sr-only">Tech Stack</h2>
         <RevealText
           as="h2"
           text={"Tech Stack"}

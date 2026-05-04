@@ -29,6 +29,6 @@ h1 {
   }
 
   .mainTitle {
-    @apply w-full sm:w-auto text-center text-[clamp(90px,20vw,120px)] sm:text-[160px] xl:text-[200px];
+    @apply font-bold uppercase leading-[100%] w-full sm:w-auto text-center text-[clamp(90px,20vw,120px)] sm:text-[160px] xl:text-[200px];
   }
 }

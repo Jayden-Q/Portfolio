@@ -50,8 +50,8 @@ export default function CookieConsent() {
 
   if (cookieState === 'not-answered') {
     return (
-      <div className="fixed border-2 border-[#333] bottom-4 right-4 p-4 bg-white/50 backdrop-blur-md rounded-tl-lg z-999 max-w-[300px]">
-        <p className='mb-2'>We use cookies to improve your experience. Do you accept?</p>
+      <div className="fixed border-2 border-[#333] bottom-4 right-4 p-4 bg-white/50 backdrop-blur-md rounded-tl-lg z-[998] max-w-[300px]">
+        <p className='mb-2'>Analytics cookies help improve this site. Accept or reject.</p>
         <div className="flex gap-2">
             <button className='border-2 border-[#333] px-2 py-1 cursor-pointer transition-transform hover:scale-[1.05] duration-100' onClick={() => handleConsent('accepted')}>Accept</button>
             <button className='border-none px-2 py-1 cursor-pointer' onClick={() => handleConsent('rejected')}>Reject</button>

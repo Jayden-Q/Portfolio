@@ -13,26 +13,56 @@ import { sendGAEvent } from "@next/third-parties/google";
 gsap.registerPlugin(useGSAP);
 
 const work = [
-  {
-    title: "Interior Design Hero Section",
-    imageSrc: "/portfolio/interior-design-hero.png",
-    imageAlt: "Interior design",
-  },
-  {
-    title: "Bento Design",
-    imageSrc: "/portfolio/bento.png",
-    imageAlt: "Interior design",
-  },
-  {
-    title: "Orbit Hero Section",
-    imageSrc: "/portfolio/orbit.png",
-    imageAlt: "Interior design",
-  },
+  // {
+  //   title: "Interior Design Hero Section",
+  //   imageSrc: "/portfolio/interior-design-hero.png",
+  //   imageAlt: "Interior design",
+  // },
+  // {
+  //   title: "Bento Design",
+  //   imageSrc: "/portfolio/bento.png",
+  //   imageAlt: "Interior design",
+  // },
+  // {
+  //   title: "Orbit Hero Section",
+  //   imageSrc: "/portfolio/orbit.png",
+  //   imageAlt: "Interior design",
+  // },
   {
     title: "Calendar",
     imageSrc: "/portfolio/calendar.png",
     imageAlt: "Interior design",
   },
+  {
+    title: "KOVA Product Design",
+    imageSrc: "/portfolio/Kova-product.png",
+    imageAlt: "Kova product design"
+  },
+  {
+    title: "KOVA Dashboard",
+    imageSrc: "/portfolio/Kova-dashboard.png",
+    imageAlt: "Kova dashboard"
+  },
+  {
+    title: "Sponsorly",
+    imageSrc: "/portfolio/Sponsorly.png",
+    imageAlt: "Sponsorly landing page"
+  },
+  // {
+  //   title: "Sentinel Prévention Incendie Brand Guidelines",
+  //   imageSrc: "/portfolio/Sentinel-brand-guidelines.png",
+  //   imageAlt: "Sentinel Prévention Incendie brand guidelines"
+  // },
+  {
+    title: "Sentinel Prévention Incendie Landing Page",
+    imageSrc: "/portfolio/Sentinel-landing.png",
+    imageAlt: "Sentinel Prévention Incendie landing page"
+  },
+  {
+    title: "Planwise Landing Page",
+    imageSrc: "/portfolio/Planwise-landing.png",
+    imageAlt: "Planwise landing page"
+  }
 ];
 
 const Portfolio = () => {
@@ -124,7 +154,7 @@ const Portfolio = () => {
 
     if (isModalOpen) {
       tweenRef.current.pause();
-      document.body.style.overflow = "hidden";
+      // document.body.style.overflow = "hidden";
     } else {
       tweenRef.current.resume();
       document.body.style.overflow = "";
@@ -202,7 +232,7 @@ const Portfolio = () => {
                 type="button"
                 onClick={() => openModal(index)}
                 onDragStart={(e) => e.preventDefault()}
-                className="group relative w-[min(80vw,420px)] shrink-0 cursor-pointer select-none text-left transition-transform duration-200 hover:scale-[1.05]"
+                className="group relative  shrink-0 cursor-pointer select-none text-left transition-transform duration-200 hover:scale-[1.05]"
                 aria-label={`Open ${item.title}`}
               >
                 <div className="relative h-[clamp(200px,60vw,300px)] sm:h-[300px] overflow-hidden rounded-[24px] border-2 border-black/10">
@@ -212,7 +242,7 @@ const Portfolio = () => {
                     width={500}
                     height={500}
                     draggable={false}
-                    className="h-full w-full object-cover pointer-events-none"
+                    className="h-full w-full object-contain pointer-events-none"
                   />
                 </div>
               </button>
@@ -227,7 +257,7 @@ const Portfolio = () => {
 
       {isModalOpen && activeIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center px-6 py-10"
+          className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center px-6 py-10"
           onClick={closeModal}
         >
           <button
